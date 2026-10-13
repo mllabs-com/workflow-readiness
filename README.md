@@ -2,8 +2,8 @@
 
 [![CI](https://github.com/mllabs-com/workflow-readiness/actions/workflows/ci.yml/badge.svg)](https://github.com/mllabs-com/workflow-readiness/actions/workflows/ci.yml)
 
-Pick which broken workflow becomes software first, and name the work that
-stands between each candidate and a build.
+Pick which of your broken workflows becomes software first, and name the
+work that stands between each candidate and a build.
 
 - For operations and finance teams with more candidates than budget
 - Scores four factors, multiplies them, and lets the weakest one lead
@@ -11,7 +11,7 @@ stands between each candidate and a build.
 - Flags factors where scorers disagree; the gap hides a constraint
 - Plain Python 3.11+, no dependencies; Markdown or JSON output
 
-No code? Use the [printable checklist](CHECKLIST.md) in a meeting instead.
+No code? Use the [printable checklist](CHECKLIST.md) in your next meeting.
 
 ## How it scores
 
@@ -88,8 +88,9 @@ pytest -q && ruff check . && ruff format --check .
 - [Is Your Data Good Enough To Start Building?](https://mllabs.com/articles/how-to-know-your-data-is-build-ready)
 - One workflow in depth: the [readiness scan](https://mllabs.com/score)
 
-Maintained by [ML LABS](https://mllabs.com): we build, run and improve
-the software that connects a company's people and systems.
+Want this running on your own workflow? [ML LABS](https://mllabs.com)
+builds, runs and improves the software that connects your people and your
+systems.
 [Podcast](https://mllabs.com/podcast) ·
 [Newsletter](https://mllabs.com/newsletter)
 
