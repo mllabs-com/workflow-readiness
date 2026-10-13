@@ -1,0 +1,91 @@
+# Four candidate workflows at a fictional mid-size distributor.
+# Each person scores alone, before the group meets; the tool flags
+# any factor where two scores sit two or more points apart.
+# Scores run 1 (weak) to 5 (strong). A missing check counts as unchecked.
+
+[[workflow]]
+name = "Supplier invoice matching"
+target = "Match 85% of PO-backed invoices with no human touch; every unmatched one reaches a named reviewer within one business day."
+notes = "Three-way match runs in the ERP; exceptions live in a shared inbox."
+
+[workflow.checks]
+target = true
+access = true
+owner = true
+reachable = true
+signal = true
+stability = true
+
+[[workflow.scores]]
+scorer = "Controller"
+impact = 4
+data = 4
+feasibility = 5
+fit = 4
+
+[[workflow.scores]]
+scorer = "AP lead"
+impact = 5
+data = 4
+feasibility = 4
+fit = 4
+
+[[workflow]]
+name = "Completed service jobs to invoice"
+target = "Every completed job reaches finance with its sign-off and PO reference, or sits in a named person's exception queue."
+
+[workflow.checks]
+target = true
+access = false
+owner = true
+reachable = false
+signal = true
+
+[[workflow.scores]]
+scorer = "Controller"
+impact = 5
+data = 2
+feasibility = 4
+fit = 3
+
+[[workflow.scores]]
+scorer = "Service manager"
+impact = 4
+data = 4
+feasibility = 4
+fit = 3
+
+[[workflow]]
+name = "Month-end accrual estimates"
+notes = "Inputs come from four spreadsheets assembled by one analyst."
+
+[workflow.checks]
+target = false
+owner = true
+reachable = false
+
+[[workflow.scores]]
+scorer = "Controller"
+impact = 3
+data = 1
+feasibility = 3
+fit = 4
+
+[[workflow]]
+name = "Customer credit holds"
+target = "Release or escalate every held order within two hours of the hold."
+
+[workflow.checks]
+target = true
+access = true
+owner = false
+reachable = true
+signal = true
+stability = true
+
+[[workflow.scores]]
+scorer = "Credit manager"
+impact = 3
+data = 4
+feasibility = 4
+fit = 2
